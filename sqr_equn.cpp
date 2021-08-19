@@ -1,5 +1,5 @@
 #include <stdio.h> 
-#include <cmath>
+#include <math.h>
 
 double line_equation(double a, double b, double c) {
 	
