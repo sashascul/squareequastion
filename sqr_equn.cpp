@@ -1,7 +1,7 @@
 #include <stdio.h> 
 #include <math.h>
 
-enum switcher {
+enum forCase {
 	ZERO = 0, 
 	ONE = 1, 
 	TWO = 2, 
