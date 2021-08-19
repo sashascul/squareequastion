@@ -68,7 +68,4 @@ int main()
 		printf("ROOTS: 2\n%lf\n%lf", x1, x2);
 	if (roots == 8) 
 		printf("INFINITY ROOTS");
-		
-	
-
 }
