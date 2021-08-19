@@ -1,6 +1,13 @@
 #include <stdio.h> 
 #include <math.h>
 
+enum switcher {
+	ZERO = 0, 
+	ONE = 1, 
+	TWO = 2, 
+	MANYROOTS = 8
+};
+
 void line_equation(double a, double b, double c, double *pX11, int *pRoots1) {
 	
         
@@ -63,16 +70,16 @@ int sqr_equation(double a, double b, double c, double *pX1, double *pX2, int *pR
 
 void forSwitch(int roots, double x1, double x2) {
 		switch(roots) {
-		case 0:
+		case ZERO:
 			printf("NO ROOTS");
 			break;
-		case 1: 
+		case ONE: 
 			printf("ROOT: 1\n%lf", x1);
 			break;
-		case 2:
+		case TWO:
 			printf("ROOTS: 2\n%lf\n%lf", x1, x2);
 			break;
-		case 8:
+		case MANYROOTS:
 			printf("INFINITY ROOTS");
 			break;
 	}
