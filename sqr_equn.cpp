@@ -1,7 +1,23 @@
 #include <stdio.h> 
 #include <math.h>
 
-double equation(double a, double b, double c, double *pX1, double *pX2, int *pRoots) {
+void line_equation(double a, double b, double c, double *pX11, int *pRoots1) {
+	
+        
+		if (b != 0){
+        	*pRoots1 = 1;
+        	if (c != 0)
+            	*pX11 = -c / b;
+        	else
+            	*pX11 = 0;
+        }
+        
+        else 
+            if (c != 0)
+                *pRoots1 = 0;	
+}
+
+void equation(double a, double b, double c, double *pX1, double *pX2, int *pRoots) {
 	
 	double x1 = 0, x2 = 0; 
 	
@@ -35,22 +51,14 @@ double equation(double a, double b, double c, double *pX1, double *pX2, int *pRo
                 if (b * b - 4 * a * c < 0)
                     *pRoots = 0;
     }
-    else
-        if (b != 0){
-        	*pRoots = 1;
-        	if (c != 0)
-            	x1 = -c / b;
-        	else
-            	x1 = 0;
-      
-        *pX1 = x1;
-        }
-        
-        else 
-            if (c != 0)
-                *pRoots = 0;
+    else {   	
+    	double x11 = 0;
+    	int roots1 = 0;
+    	line_equation(a, b, c, &x11, &roots1);
+    	*pRoots = roots1;
+    	*pX1 = x11;
+	}
 }
-
 
 int main()
 {
@@ -59,13 +67,19 @@ int main()
     printf("Hello! This programm can decide a square equation. Input parametrs a, b, c in a space: ");
     scanf("%lf %lf %lf", &a, &b, &c);
     equation(a, b, c, &x1, &x2, &roots);
-    
-	if (roots == 0)
-		printf("NO ROOTS");
-	if (roots == 1)
-		printf("ROOT: 1\n%lf", x1);
-	if (roots == 2)
-		printf("ROOTS: 2\n%lf\n%lf", x1, x2);
-	if (roots == 8) 
-		printf("INFINITY ROOTS");
+
+	switch(roots) {
+		case 0:
+			printf("NO ROOTS");
+			break;
+		case 1: 
+			printf("ROOT: 1\n%lf", x1);
+			break;
+		case 2:
+			printf("ROOTS: 2\n%lf\n%lf", x1, x2);
+			break;
+		case 8:
+			printf("INFINITY ROOTS");
+			break;
+	}	
 }
