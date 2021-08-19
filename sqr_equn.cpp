@@ -1,4 +1,5 @@
-#include <bits/stdc++.h> 
+#include <stdio.h> 
+#include <cmath>
 
 double line_equation(double a, double b, double c) {
 	
