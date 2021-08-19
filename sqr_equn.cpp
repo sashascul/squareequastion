@@ -1,74 +1,74 @@
 #include <stdio.h> 
 #include <math.h>
 
-double line_equation(double a, double b, double c) {
-	
-	double x1 = 0;
-	
-	if (a == 0 && b == 0 && c == 0){
-        printf("INFINITY ROOTS");
-        return 0; // THE END :)
-    } 
-	
-	if (b != 0){
-        printf("ROOT:\n");
-        if (c != 0)
-            x1 = -c / b;
-        else
-            x1 = 0;
-            
-        printf("%lf", x1);
-        }
-        
-        else
-            if (c != 0)
-                printf("0");
-    return 0;
-	
-}
-
-double equation(double a, double b, double c) {
+double equation(double a, double b, double c, double *pX1, double *pX2, int *pRoots) {
 	
 	double x1 = 0, x2 = 0; 
+	
+	if (a == 0 && b == 0 && c == 0){
+        *pRoots = 8;
+    } 
     if (a != 0){
         if (b * b - 4 * a * c > 0){
-            printf("ROOTS:\n");
+        	*pRoots = 2;
             x1 = (-b - sqrt(b * b - 4 * a * c))/(2 * a);
             x2 = (-b + sqrt(b * b - 4 * a * c))/(2 * a);
                 if (x1 != 0)
-                    printf("%lf\n", x1);
+                    *pX1 = x1;
             	else
-                    printf("0\n");
+                    *pX1 = 0;
             if (x2 != 0)
-                printf("%lf", x2);
+                *pX2 = x2;
             else
-            	printf("0");  
+            	*pX2 = 0;
         }
         else
             if (b * b - 4 * a * c == 0){
-                printf("ROOT:\n");
+            	*pRoots = 1;
                 x1 = -b/(2 * a);
                 if (x1 != 0)
-                    printf("%lf", x1);
+                    *pX1 = x1;
                 else
-                    printf("0");
+                    *pX1 = 0;
             }
             else
                 if (b * b - 4 * a * c < 0)
-                    printf("0");
+                    *pRoots = 0;
     }
     else
-        line_equation(a, b, c);
-	
+        if (b != 0){
+        	*pRoots = 1;
+        	if (c != 0)
+            	x1 = -c / b;
+        	else
+            	x1 = 0;
+      
+        *pX1 = x1;
+        }
+        
+        else 
+            if (c != 0)
+                *pRoots = 0;
 }
 
 
 int main()
 {
-    double a = 0, b = 0, c = 0; //a*x*x + b*x + c = 0
+    double a = 0, b = 0, c = 0, x1 = 0, x2 = 0;
+	int roots = 0;
     printf("Hello! This programm can decide a square equation. Input parametrs a, b, c in a space: ");
     scanf("%lf %lf %lf", &a, &b, &c);
-    equation(a, b, c);
-    return 0;
+    equation(a, b, c, &x1, &x2, &roots);
+    
+	if (roots == 0)
+		printf("NO ROOTS");
+	if (roots == 1)
+		printf("ROOT: 1\n%lf", x1);
+	if (roots == 2)
+		printf("ROOTS: 2\n%lf\n%lf", x1, x2);
+	if (roots == 8) 
+		printf("INFINITY ROOTS");
+		
+	
 
 }
