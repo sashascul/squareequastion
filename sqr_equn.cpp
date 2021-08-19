@@ -82,7 +82,7 @@ int main()
 {
     double a = 0, b = 0, c = 0, x1 = 0, x2 = 0;
 	int roots = 0;
-    printf("Hello! This programm can decide a square equation. Input parametrs a, b, c in a space: ");
+    printf("Hello! This program can decide a square equation. Input parametrs a, b, c in a space: ");
     scanf("%lf %lf %lf", &a, &b, &c);
     sqr_equation(a, b, c, &x1, &x2, &roots);
     forSwitch(roots, x1, x2);
