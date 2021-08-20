@@ -7,10 +7,7 @@ enum forCase {
 	TWO = 2, 
 	MANYROOTS = 8
 };
-
-void line_equation(double a, double b, double c, double *pX11, int *pRoots1) {
-	
-        
+void line_equation(double a, double b, double c, double *pX11, int *pRoots1) {    
 		if (b != 0){
         	*pRoots1 = 1;
         	if (c != 0)
@@ -18,16 +15,12 @@ void line_equation(double a, double b, double c, double *pX11, int *pRoots1) {
         	else
             	*pX11 = 0;
         }
-        
         else 
             if (c != 0)
                 *pRoots1 = 0;	
 }
-
-int sqr_equation(double a, double b, double c, double *pX1, double *pX2, int *pRoots) {
-	
+int sqr_equation(double a, double b, double c, double *pX1, double *pX2, int *pRoots) {	
 	double x1 = 0, x2 = 0, D = b * b - 4 * a * c, sqrtD = sqrt(D), a2 = 2 * a;
-	
 	if (a == 0 && b == 0 && c == 0){
         *pRoots = 8;
         return 0;
@@ -67,7 +60,6 @@ int sqr_equation(double a, double b, double c, double *pX1, double *pX2, int *pR
     	*pX1 = x11;
 	}
 }
-
 void forSwitch(int roots, double x1, double x2) {
 		switch(roots) {
 		case ZERO:
@@ -84,14 +76,18 @@ void forSwitch(int roots, double x1, double x2) {
 			break;
 	}
 }
-
 int main()
 {
-    double a = 0, b = 0, c = 0, x1 = 0, x2 = 0;
+    double a = NAN, b = NAN, c = NAN, x1 = 0, x2 = 0;
 	int roots = 0;
     printf("Hello! This program can decide a square equation. Input parametrs a, b, c in a space: ");
     scanf("%lf %lf %lf", &a, &b, &c);
-    sqr_equation(a, b, c, &x1, &x2, &roots);
-    forSwitch(roots, x1, x2);
+    
+    if (isnan(a) == 0 && isnan(b) == 0 && isnan(c) == 0) {
+    	sqr_equation(a, b, c, &x1, &x2, &roots);
+    	forSwitch(roots, x1, x2);
+	}	
+	else 
+		printf("ERROR");
 	
 }
