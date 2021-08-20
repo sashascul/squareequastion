@@ -20,31 +20,31 @@ void line_equation(double a, double b, double c, double *pX11, int *pRoots1) {
                 *pRoots1 = 0;	
 }
 int sqr_equation(double a, double b, double c, double *pX1, double *pX2, int *pRoots) {	
-	double x1 = 0, x2 = 0, D = b * b - 4 * a * c, sqrtD = sqrt(D), twoA = 2 * a;
 	if (a == 0 && b == 0 && c == 0){
         *pRoots = 8;
         return 0;
     } 
     if (a != 0){
+    	double D = b * b - 4 * a * c, sqrtD = sqrt(D), twoA = 2 * a;
         if (D > 0){
         	*pRoots = 2;
-            x1 = (-b - sqrtD)/twoA;
-            x2 = (-b + sqrtD)/twoA;
-                if (x1 != 0)
-                    *pX1 = x1;
+            *pX1 = (-b - sqrtD)/twoA;
+            *pX2 = (-b + sqrtD)/twoA;
+                if (*pX1 != 0)
+                    *pX1 = *pX1;
             	else
                     *pX1 = 0;
-            if (x2 != 0)
-                *pX2 = x2;
+            if (*pX2 != 0)
+                *pX2 = *pX2;
             else
             	*pX2 = 0;
         }
         else
             if (D == 0){
             	*pRoots = 1;
-                x1 = -b/twoA;
-                if (x1 != 0)
-                    *pX1 = x1;
+                *pX1 = -b/twoA;
+                if (*pX1 != 0)
+                    *pX1 = *pX1;
                 else
                     *pX1 = 0;
             }
@@ -52,11 +52,8 @@ int sqr_equation(double a, double b, double c, double *pX1, double *pX2, int *pR
                 if (D < 0)
                     *pRoots = 0;
     }
-    else {
-		int roots = 0; 	
-    	line_equation(a, b, c, &x1, &roots);
-    	*pRoots = roots;
-    	*pX1 = x1;
+    else {	
+    	line_equation(a, b, c, pX1, pRoots);
 	}
 }
 void forSwitch(int roots, double x1, double x2) {
