@@ -30,23 +30,11 @@ int sqr_equation(double a, double b, double c, double *pX1, double *pX2, int *pR
         	*pRoots = 2;
             *pX1 = (-b - sqrtD)/twoA;
             *pX2 = (-b + sqrtD)/twoA;
-                if (*pX1 != 0)
-                    *pX1 = *pX1;
-            	else
-                    *pX1 = 0;
-            if (*pX2 != 0)
-                *pX2 = *pX2;
-            else
-            	*pX2 = 0;
         }
         else
             if (D == 0){
             	*pRoots = 1;
                 *pX1 = -b/twoA;
-                if (*pX1 != 0)
-                    *pX1 = *pX1;
-                else
-                    *pX1 = 0;
             }
             else
                 if (D < 0)
