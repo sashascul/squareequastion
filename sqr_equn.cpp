@@ -76,18 +76,22 @@ void forSwitch(int roots, double x1, double x2) {
 			break;
 	}
 }
-int main()
-{
-    double a = NAN, b = NAN, c = NAN, x1 = 0, x2 = 0;
-	int roots = 0;
-     printf("Hello! This program can decide a square equation. Input parametrs a, b, c in a space: ");
+void lucky(double a, double b, double c, double x1, double x2, int roots) {
+    printf("Hello! This program can decide a square equation. Input parametrs a, b, c in a space: ");
     scanf("%lf %lf %lf", &a, &b, &c);
-    
+	
     if (isnan(a) == 0 && isnan(b) == 0 && isnan(c) == 0) {
     	sqr_equation(a, b, c, &x1, &x2, &roots);
     	forSwitch(roots, x1, x2);
 	}	
 	else 
-		printf("ERROR");
-	
+		printf("ERROR: Not a numbers");		
+}
+
+int main()
+{
+    double a = NAN, b = NAN, c = NAN, x1 = 0, x2 = 0;
+	int roots = 0;
+	lucky(a, b, c, x1, x2, roots);
+
 }
