@@ -3,23 +3,23 @@ using namespace std;
 
 int main() {
 	
-	char a[10], b[10], c[10];
+	string a, b, c;
 	int counter = 0, a1 = 0, b1 = 0, c1 = 0;
-	scanf("%s %s %s", a, b, c);
+	cin >> a >> b >> c;
 	
-	for (int i = 0; i < 10; i++) {
+	for (int i = 0; i < a.length(); i++) {
 		if ((int)a[i] < 48 || (int)a[i] > 57) {
 			counter++;
 		}
 	}
 	
-	for (int i = 0; i < 10; i++) {
+	for (int i = 0; i < b.length(); i++) {
 		if ((int)b[i] < 48 || (int)b[i] > 57) {
 			counter++;
 		}
 	}
 	
-	for (int i = 0; i < 10; i++) {
+	for (int i = 0; i < c.length(); i++) {
 		if ((int)c[i] < 48 || (int)c[i] > 57) {
 			counter++;
 		}
@@ -32,6 +32,6 @@ int main() {
 	}
 	
 	else
-		printf("ERROR");
+		cout << "ERROR";
 	
 }
