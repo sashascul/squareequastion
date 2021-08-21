@@ -7,6 +7,8 @@ int square_equation(double a, double b, double c, double *pX1, double *pX2, int 
 
 void forSwitch(int roots, double x1, double x2);
 
+void compareNumber(double a, double b, double c, const double EPS);
+
 void determineNumber(double a, double b, double c, double x1, double x2, int roots);
 
 enum wordNumbers {
@@ -15,5 +17,3 @@ enum wordNumbers {
 	TWO = 2, 
 	MANYROOTS = 8
 };
-
-
