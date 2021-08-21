@@ -1,12 +1,13 @@
-#include <stdio.h> 
-#include <math.h>
+#include "sqr_equation.h"
 
-enum forCase {
-	ZERO = 0, 
-	ONE = 1, 
-	TWO = 2, 
-	MANYROOTS = 8
-};
+int main()
+{
+    double a = NAN, b = NAN, c = NAN, x1 = 0, x2 = 0;
+	int roots = 0;
+	determineNumber(a, b, c, x1, x2, roots);
+
+}
+
 void line_equation(double a, double b, double c, double *pX11, int *pRoots1) {    
 		if (b != 0){
         	*pRoots1 = 1;
@@ -19,7 +20,8 @@ void line_equation(double a, double b, double c, double *pX11, int *pRoots1) {
             if (c != 0)
                 *pRoots1 = 0;	
 }
-int sqr_equation(double a, double b, double c, double *pX1, double *pX2, int *pRoots) {	
+
+int square_equation(double a, double b, double c, double *pX1, double *pX2, int *pRoots) {	
 	if (a == 0 && b == 0 && c == 0){
         *pRoots = 8;
         return 0;
@@ -44,6 +46,7 @@ int sqr_equation(double a, double b, double c, double *pX1, double *pX2, int *pR
     	line_equation(a, b, c, pX1, pRoots);
 	}
 }
+
 void forSwitch(int roots, double x1, double x2) {
 		switch(roots) {
 		case ZERO:
@@ -60,22 +63,27 @@ void forSwitch(int roots, double x1, double x2) {
 			break;
 	}
 }
-void lucky(double a, double b, double c, double x1, double x2, int roots) {
+
+void compareNumber(double a, double b, double c, const double EPS) {
+	if (abs(a - b) < EPS)
+		a = b;
+	if (abs(a - c) < EPS)
+		a = c;
+	if (abs(b - c) < EPS)
+		b = c;
+}
+
+void determineNumber(double a, double b, double c, double x1, double x2, int roots) {
+	const double EPS = 0.000001;
     printf("Hello! This program can decide a square equation. Input parametrs a, b, c in a space: ");
     scanf("%lf %lf %lf", &a, &b, &c);
+    compareNumber(a, b, c, EPS);
 	
     if (isnan(a) == 0 && isnan(b) == 0 && isnan(c) == 0) {
-    	sqr_equation(a, b, c, &x1, &x2, &roots);
+    	square_equation(a, b, c, &x1, &x2, &roots);
     	forSwitch(roots, x1, x2);
 	}	
 	else 
 		printf("ERROR: Not a numbers");		
 }
 
-int main()
-{
-    double a = NAN, b = NAN, c = NAN, x1 = 0, x2 = 0;
-	int roots = 0;
-	lucky(a, b, c, x1, x2, roots);
-
-}
