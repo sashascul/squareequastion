@@ -10,7 +10,7 @@ int main()
 
 int cON(double x) { // comparisonOfNumber
 
-    assert (x != 0);
+    assert (isfinite(x));
 
 	const double EPS = 0.000001;
 	if (fabs(x) < EPS)
@@ -24,6 +24,7 @@ void line_equation(double a, double b, double c, double *pX11, int *pRoots1) {
     assert (isfinite(b));
     assert (isfinite(c));
     assert (pX11 != 0);
+    assert (pRoots1 != 0);
    
 		if (cON(b) == 0){
         	*pRoots1 = 1;
@@ -72,10 +73,9 @@ int square_equation(double a, double b, double c, double *pX1, double *pX2, int 
 }
 
 void forSwitch(int roots, double x1, double x2) {
-
-    assert (x1 != 0);
-    assert (x2 != 0);
-    assert (x1 != x2);
+	
+    assert (isfinite(x1));
+    assert (isfinite(x2));
 
 		switch(roots) {
 		case ZERO:
@@ -96,12 +96,11 @@ void forSwitch(int roots, double x1, double x2) {
 
 void determineNumber(double a, double b, double c, double x1, double x2, int roots) {
 	
-	assert (isfinite(a));
+    assert (isfinite(a));
     assert (isfinite(b));
     assert (isfinite(c));
-    assert (x1 != 0);
-    assert (x2 != 0);
-    assert (x1 != x2);
+    assert (isfinite(x1));
+    assert (isfinite(x2));
 	
     printf("Hello! This program can decide a square equation. Input parametrs a, b, c in a space: ");
     scanf("%lf %lf %lf", &a, &b, &c);
