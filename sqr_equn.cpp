@@ -16,15 +16,15 @@ int cON(double x) { // comparisonOfNumber
 }
 
 void line_equation(double a, double b, double c, double *pX11, int *pRoots1) {    
-		if (b != 0){
+		if (cON(b) == 0){
         	*pRoots1 = 1;
-        	if (c != 0)
+        	if (cON(c) == 0)
             	*pX11 = -c / b;
         	else
             	*pX11 = 0;
         }
         else 
-            if (c != 0)
+            if (cON(c) == 0)
                 *pRoots1 = 0;	
 }
 
@@ -33,7 +33,7 @@ int square_equation(double a, double b, double c, double *pX1, double *pX2, int 
         *pRoots = 8;
         return 0;
     } 
-    if (a != 0){
+    if (cON(a) == 0){
     	double D = b * b - 4 * a * c, sqrtD = sqrt(D), twoA = 2 * a;
         if (D > 0){
         	*pRoots = 2;
