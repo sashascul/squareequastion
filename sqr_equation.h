@@ -23,4 +23,3 @@ enum wordNumbers {
 	TWO = 2, 
 	MANYROOTS
 };
-
