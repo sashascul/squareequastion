@@ -14,9 +14,6 @@ void compareNumber(double a, double b, double c, const double EPS);
 
 void determineNumber(double a, double b, double c, double x1, double x2, int roots);
 
-int CV (double a, double b, double c, double *pX1, double *pX2);
-
-
 enum wordNumbers {
 	ZERO = 0, 
 	ONE = 1, 
