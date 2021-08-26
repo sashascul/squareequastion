@@ -8,6 +8,15 @@ int main()
 
 }
 
+int CV (double a, double b, double c, double *pX1, double *pX2) { //checking variables;
+    assert (isfinite(a));
+    assert (isfinite(b));
+    assert (isfinite(c));
+    assert (pX1 != 0);
+    assert (pX2 != 0);
+    assert (pX1 != pX2);
+}
+
 int cON(double x) { // comparisonOfNumber
 	const double EPS = 0.000001;
 	if (fabs(x) < EPS)
@@ -82,13 +91,4 @@ void determineNumber(double a, double b, double c, double x1, double x2, int roo
 	}	
 	else 
 		printf("ERROR: Not a numbers");		
-}
-
-int CV (double a, double b, double c, double *pX1, double *pX2) { //checking variables;
-    assert (isfinite(a));
-    assert (isfinite(b));
-    assert (isfinite(c));
-    assert (pX1 != 0);
-    assert (pX2 != 0);
-    assert (pX1 != pX2);
 }
