@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 
+int comparisonOfNumber(double *x, double *y);
+
 void line_equation(double a, double b, double c, double *pX11, int *pRoots1);
 
 int square_equation(double a, double b, double c, double *pX1, double *pX2, int *pRoots);
