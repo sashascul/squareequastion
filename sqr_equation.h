@@ -17,5 +17,6 @@ enum wordNumbers {
 	ZERO = 0, 
 	ONE = 1, 
 	TWO = 2, 
-	MANYROOTS = 8
+	MANYROOTS
 };
+
