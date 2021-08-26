@@ -30,24 +30,24 @@ void line_equation(double a, double b, double c, double *pX11, int *pRoots1) {
 
 int square_equation(double a, double b, double c, double *pX1, double *pX2, int *pRoots) {	
 	if (cON(a) == 1 && cON(b) == 1 && cON(c) == 1){
-        *pRoots = 8;
+        *pRoots = MANYROOTS;
         return 0;
     } 
     if (cON(a) == 0){
     	double D = b * b - 4 * a * c, sqrtD = sqrt(D), twoA = 2 * a;
         if (D > 0){
-        	*pRoots = 2;
+        	*pRoots = TWO;
             *pX1 = (-b - sqrtD)/twoA;
             *pX2 = (-b + sqrtD)/twoA;
         }
         else
             if (cON(D) == 1){
-            	*pRoots = 1;
+            	*pRoots = ONE;
                 *pX1 = -b/twoA;
             }
             else
                 if (D < 0)
-                    *pRoots = 0;
+                    *pRoots = ZERO;
     }
     else {	
     	line_equation(a, b, c, pX1, pRoots);
