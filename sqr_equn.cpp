@@ -1,4 +1,4 @@
-#include "sqr_equation.h"
+#include "square_equation.h"
 
 int main()
 {
@@ -95,12 +95,6 @@ void forSwitch(int roots, double x1, double x2) {
 
 
 void determineNumber(double a, double b, double c, double x1, double x2, int roots) {
-	
-    assert (isfinite(a));
-    assert (isfinite(b));
-    assert (isfinite(c));
-    assert (isfinite(x1));
-    assert (isfinite(x2));
 	
     printf("Hello! This program can decide a square equation. Input parametrs a, b, c in a space: ");
     scanf("%lf %lf %lf", &a, &b, &c);
