@@ -1,4 +1,5 @@
 #include "square_equation.h"
+#include "testSquareEquation.cpp"
 
 int main()
 {
