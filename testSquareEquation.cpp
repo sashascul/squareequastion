@@ -32,19 +32,27 @@ int unitTest() {
 	
 	error = error + testSquare(1, -3, 2, 2, 1, 2);
 		square_equation(1, -3, 2, &x1, &x2, &roots);
-	printf("x^2 - 3x + 2 = 0\nResults of your equation:\nROOTS:%d\n%lf\n%lf\n", roots, x1, x2);
+	printf("x^2 - 3x + 2 = 0\nResults of your equation:\nROOTS:%d\n%lf\n%lf\t", roots, x1, x2);
+		if (roots == TWO && x1 == 1 && x2 == 2)
+			printf("Good test\n");
 	x1 = NAN; x2 = NAN;
 	error = error + testSquare(0, -1, 6, 6, NAN, 1);
 		square_equation(0, -1, 6, &x1, &x2, &roots);
-	printf("3x + 2 = 0\nResults of your equation:\nROOTS:%d\n%lf\n%lf\n", roots, x1, x2);
+	printf("-x + 6 = 0\nResults of your equation:\nROOTS:%d\n%lf\n%lf\t", roots, x1, x2);
+		if (roots == ONE && x1 == 6)
+			printf("Good test\n");
 	x1 = NAN; x2 = NAN;
 	error = error + testSquare(1, 1, 1, NAN, NAN, 0);
 		square_equation(1, 1, 1, &x1, &x2, &roots);
-	printf("x^2 - 3x + 1 = 0\nResults of your equation:\nROOTS:%d\n%lf\n%lf\n", roots, x1, x2);
+	printf("x^2 + x + 1 = 0\nResults of your equation:\nROOTS:%d\n%lf\n%lf\t", roots, x1, x2);
+		if (roots == ZERO)
+			printf("Good test\n");
 	x1 = NAN; x2 = NAN;
 	error = error + testSquare(0, 0, 0, NAN, NAN, MANYROOTS);
 		square_equation(0, 0, 0, &x1, &x2, &roots);
-	printf("0x^2 + 0x + 0 = 0\nResults of your equation:\nROOTS:%d\n%lf\n%lf\n", roots, x1, x2);
+	printf("0x^2 + 0x + 0 = 0\nResults of your equation:\nROOTS:%d\n%lf\n%lf\t", roots, x1, x2);
+		if (roots == MANYROOTS)
+			printf("Good test\n");
 	
 	printf("Error tests: %d\n", error);
 	
