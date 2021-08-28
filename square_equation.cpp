@@ -6,7 +6,7 @@ int main()
 {
     double a = NAN, b = NAN, c = NAN, x1 = 0, x2 = 0;
 	int roots = 0;
-		//unitTest();
+		unitTest();
 	determineNumber(&a, &b, &c);
 	square_equation(a, b, c, &x1, &x2, &roots);
 	forSwitch(roots, x1, x2);
