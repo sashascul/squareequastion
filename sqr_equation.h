@@ -2,7 +2,7 @@
 #include <math.h>
 #include <assert.h>
 
-int comparisonOfNumber(double *x, double *y);
+int cON(double x);
 
 void line_equation(double a, double b, double c, double *pX11, int *pRoots1);
 
@@ -12,11 +12,8 @@ void forSwitch(int roots, double x1, double x2);
 
 void compareNumber(double a, double b, double c, const double EPS);
 
-void determineNumber(double a, double b, double c, double x1, double x2, int roots);
+void determineNumber(double *a, double *b, double *c);
 
-enum wordNumbers {
-	ZERO = 0, 
-	ONE = 1, 
-	TWO = 2, 
-	MANYROOTS
-};
+int testSquare(double a, double b, double c, double True_x1, double True_x2, int True_roots);
+
+int unitTest();
