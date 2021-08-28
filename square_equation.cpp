@@ -6,11 +6,10 @@ int main()
 {
     double a = NAN, b = NAN, c = NAN, x1 = 0, x2 = 0;
 	int roots = 0;
+		unitTest();
 	determineNumber(&a, &b, &c);
 	square_equation(a, b, c, &x1, &x2, &roots);
 	forSwitch(roots, x1, x2);
-
-	unitTest();
 }
 
 int cON(double x) { // comparisonOfNumber
@@ -85,16 +84,16 @@ void forSwitch(int roots, double x1, double x2) {
 
 		switch(roots) {
 		case ZERO:
-			printf("NO ROOTS");
+			printf("NO ROOTS\n");
 			break;
 		case ONE: 
-			printf("ROOT: 1\n%lf", x1);
+			printf("ROOT: 1\n%lf\n", x1);
 			break;
 		case TWO:
-			printf("ROOTS: 2\n%lf\n%lf", x1, x2);
+			printf("ROOTS: 2\n%lf\n%lf\n", x1, x2);
 			break;
 		case MANYROOTS:
-			printf("INFINITY ROOTS");
+			printf("INFINITY ROOTS\n");
 			break;
 	}
 }
@@ -109,6 +108,6 @@ void determineNumber(double *a, double *b, double *c) {
 		return;
 	}	
 	else 
-		printf("ERROR: Not a numbers");	
+		printf("ERROR: Not a numbers\n");	
 		exit(-1);
 }
