@@ -1,52 +1,39 @@
 #include "square_equation.h"
 
-void test() 
-{   
+enum wordNumbers {
+	ZERO = 0, 
+	ONE = 1, 
+	TWO = 2, 
+	MANYROOTS
+};
 
-    double a = 0, b = 0, c = 0, x1 = 0, x2 = 0;
-    int checking = 1, fail = 0, roots = 0;
-
-    FILE* fp;
-    fp = fopen("test.txt", "r");
-    
-    fscanf(fp, "%lf %lf %lf %d %lf %lf", &a, &b, &c, &roots, &x1, &x2);
-        
-    if (roots == 0) {
-		if (a != 0 || b != 0 || c != 0) {
-			fail++;
-			printf("Lose test %d\n", fail);
-			}
-        }
-        
-    if (roots == 1) {
-        
-		if (b * b - 4 * a * c != 0 || a != 0) {
-			fail++;
-			printf("Lose test %d\n", fail);
-		}
-
-    }
-
-    if (roots == MANYROOTS) {
-		
-		if (b * b - 4 * a * c >= 0) {
-			fail++;
-			printf("Lose test %d\n", fail);
-		}
-		
-	}
-
-    if (fail == 0) {
-        printf("Accepted!!!\n");
-        
-    }
-    else
-    {
-        printf("Finally lose tests: \n", fail);
-    }
-    
-    fclose(fp);
+int testSquare (double a, double b, double c, double True_x1, double True_x2, int True_roots) {
+	
+	double x1 = NAN, x2 = NAN;
+	int roots = 0;
+	
+	square_equation(a, b, c, &x1, &x2, &roots);
+	
+	if (roots != True_roots)
+		return 1;
+	if (x1 != True_x1) 
+		return 1;
+	if (x2 != True_x2)
+		return 1;
+	
+	return 0;
+	
 }
 
-int main () {
+int unitTest() {
+	
+	int error = 0;
+	
+	error = error + testSquare(1, -3, 2, 2, 1, 2);
+	error = error + testSquare(0, -1, 6, 6, NAN, 1);
+	error = error + testSquare(1, 1, 1, NAN, NAN, 0);
+	error = error + testSquare(0, 0, 0, NAN, NAN, MANYROOTS);
+	
+	return error;
+	
 }
