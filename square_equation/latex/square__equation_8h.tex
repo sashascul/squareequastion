@@ -1,0 +1,144 @@
+\hypertarget{square__equation_8h}{}\doxysection{square\+\_\+equation.\+h File Reference}
+\label{square__equation_8h}\index{square\_equation.h@{square\_equation.h}}
+
+
+This (header) file can solve a square equation;.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{square__equation_8h_af4579429eb304f0ca881a149d85509b3}{c\+ON}} (double x)
+\item 
+void \mbox{\hyperlink{square__equation_8h_a1e84f0838170ebd79126333f1c0449a6}{line\+\_\+equation}} (double a, double b, double c, double $\ast$p\+X11, int $\ast$p\+Roots1)
+\item 
+int \mbox{\hyperlink{square__equation_8h_a834d1de7dfad2d28ee4c8da4ef0a40ca}{square\+\_\+equation}} (double a, double b, double c, double $\ast$p\+X1, double $\ast$p\+X2, int $\ast$p\+Roots)
+\item 
+void \mbox{\hyperlink{square__equation_8h_aadadc0191c3841f2b8261eddede44e16}{for\+Switch}} (int roots, double x1, double x2)
+\item 
+void \mbox{\hyperlink{square__equation_8h_adf9e94ebb9a39179a6c9f1afeb83b14a}{determine\+Number}} (double $\ast$a, double $\ast$b, double $\ast$c)
+\item 
+int \mbox{\hyperlink{square__equation_8h_a63e186c9c93900018dce8c9ba95b3c0d}{test\+Square}} (double a, double b, double c, double True\+\_\+x1, double True\+\_\+x2, int True\+\_\+roots)
+\item 
+\mbox{\Hypertarget{square__equation_8h_a2a56e69593c10dcfa435aa1189c34190}\label{square__equation_8h_a2a56e69593c10dcfa435aa1189c34190}} 
+int {\bfseries unit\+Test} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This (header) file can solve a square equation;. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{square__equation_8h_af4579429eb304f0ca881a149d85509b3}\label{square__equation_8h_af4579429eb304f0ca881a149d85509b3}} 
+\index{square\_equation.h@{square\_equation.h}!cON@{cON}}
+\index{cON@{cON}!square\_equation.h@{square\_equation.h}}
+\doxysubsubsection{\texorpdfstring{cON()}{cON()}}
+{\footnotesize\ttfamily int c\+ON (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})}
+
+This function using for exemination of value, which \texorpdfstring{$<$}{<} EPS; 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & -\/ This value using to exemination number, which \texorpdfstring{$<$}{<} EPS; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if fabs(x) \texorpdfstring{$<$}{<} EPS, 0 -\/ if fabs(x) \texorpdfstring{$>$}{>}= EPS. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{square__equation_8h_adf9e94ebb9a39179a6c9f1afeb83b14a}\label{square__equation_8h_adf9e94ebb9a39179a6c9f1afeb83b14a}} 
+\index{square\_equation.h@{square\_equation.h}!determineNumber@{determineNumber}}
+\index{determineNumber@{determineNumber}!square\_equation.h@{square\_equation.h}}
+\doxysubsubsection{\texorpdfstring{determineNumber()}{determineNumber()}}
+{\footnotesize\ttfamily void determine\+Number (\begin{DoxyParamCaption}\item[{double $\ast$}]{a,  }\item[{double $\ast$}]{b,  }\item[{double $\ast$}]{c }\end{DoxyParamCaption})}
+
+This function checks params a, b, c. If NAN -\/ the end; 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$a} & -\/ pointer of square quation; \\
+\hline
+\mbox{\texttt{ in}}  & {\em $\ast$b} & -\/ pointer of square quation; \\
+\hline
+\mbox{\texttt{ in}}  & {\em $\ast$c} & -\/ pointer of square quation; \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{square__equation_8h_aadadc0191c3841f2b8261eddede44e16}\label{square__equation_8h_aadadc0191c3841f2b8261eddede44e16}} 
+\index{square\_equation.h@{square\_equation.h}!forSwitch@{forSwitch}}
+\index{forSwitch@{forSwitch}!square\_equation.h@{square\_equation.h}}
+\doxysubsubsection{\texorpdfstring{forSwitch()}{forSwitch()}}
+{\footnotesize\ttfamily void for\+Switch (\begin{DoxyParamCaption}\item[{int}]{roots,  }\item[{double}]{x1,  }\item[{double}]{x2 }\end{DoxyParamCaption})}
+
+This function substitute results in switch(case); 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em roots} & -\/ number of square equation roots; \\
+\hline
+\mbox{\texttt{ in}}  & {\em x1} & -\/ root of square quation; \\
+\hline
+\mbox{\texttt{ in}}  & {\em x2} & -\/ root of square quation; \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{square__equation_8h_a1e84f0838170ebd79126333f1c0449a6}\label{square__equation_8h_a1e84f0838170ebd79126333f1c0449a6}} 
+\index{square\_equation.h@{square\_equation.h}!line\_equation@{line\_equation}}
+\index{line\_equation@{line\_equation}!square\_equation.h@{square\_equation.h}}
+\doxysubsubsection{\texorpdfstring{line\_equation()}{line\_equation()}}
+{\footnotesize\ttfamily void line\+\_\+equation (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{c,  }\item[{double $\ast$}]{p\+X11,  }\item[{int $\ast$}]{p\+Roots1 }\end{DoxyParamCaption})}
+
+This function solves a line equation; 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a} & -\/ param of square quation; \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & -\/ param of square quation; \\
+\hline
+\mbox{\texttt{ in}}  & {\em c} & -\/ param of square quation; \\
+\hline
+\mbox{\texttt{ in}}  & {\em $\ast$p\+X11} & -\/ pointer of square quation; \\
+\hline
+\mbox{\texttt{ in}}  & {\em $\ast$p\+Roots1} & -\/ pointer of square quation; \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{square__equation_8h_a834d1de7dfad2d28ee4c8da4ef0a40ca}\label{square__equation_8h_a834d1de7dfad2d28ee4c8da4ef0a40ca}} 
+\index{square\_equation.h@{square\_equation.h}!square\_equation@{square\_equation}}
+\index{square\_equation@{square\_equation}!square\_equation.h@{square\_equation.h}}
+\doxysubsubsection{\texorpdfstring{square\_equation()}{square\_equation()}}
+{\footnotesize\ttfamily int square\+\_\+equation (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{c,  }\item[{double $\ast$}]{p\+X1,  }\item[{double $\ast$}]{p\+X2,  }\item[{int $\ast$}]{p\+Roots }\end{DoxyParamCaption})}
+
+This function solves a square equation; 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a} & -\/ param of square quation; \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & -\/ param of square quation; \\
+\hline
+\mbox{\texttt{ in}}  & {\em c} & -\/ param of square quation; \\
+\hline
+\mbox{\texttt{ in}}  & {\em $\ast$p\+X1} & -\/ pointer of square quation; \\
+\hline
+\mbox{\texttt{ in}}  & {\em $\ast$p\+X2} & -\/ pointer of square quation; \\
+\hline
+\mbox{\texttt{ in}}  & {\em $\ast$p\+Roots} & -\/ pointer of square quation; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of roots; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{square__equation_8h_a63e186c9c93900018dce8c9ba95b3c0d}\label{square__equation_8h_a63e186c9c93900018dce8c9ba95b3c0d}} 
+\index{square\_equation.h@{square\_equation.h}!testSquare@{testSquare}}
+\index{testSquare@{testSquare}!square\_equation.h@{square\_equation.h}}
+\doxysubsubsection{\texorpdfstring{testSquare()}{testSquare()}}
+{\footnotesize\ttfamily int test\+Square (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{c,  }\item[{double}]{True\+\_\+x1,  }\item[{double}]{True\+\_\+x2,  }\item[{int}]{True\+\_\+roots }\end{DoxyParamCaption})}
+
+This function is my test on true program; 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a} & -\/ param of square quation; \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & -\/ param of square quation; \\
+\hline
+\mbox{\texttt{ in}}  & {\em c} & -\/ param of square quation; \\
+\hline
+\mbox{\texttt{ in}}  & {\em True\+\_\+x1} & -\/ 1st true root of square quation; \\
+\hline
+\mbox{\texttt{ in}}  & {\em True\+\_\+x2} & -\/ 2nd true root square quation; \\
+\hline
+\mbox{\texttt{ in}}  & {\em True\+\_\+roots} & -\/ number of square equation roots; \\
+\hline
+\end{DoxyParams}
