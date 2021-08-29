@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void F(char s[]) {
+void pUts(char s[]) {
 	for (int i = 0; s[i] != '\0'; i++) { 
 		putchar(s[i]);
 	}
@@ -10,6 +10,6 @@ void F(char s[]) {
 int main() {
 	
 	char s[] = "Hello, world";
-	F(s);
+	pUts(s);
 	
 }
