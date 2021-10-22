@@ -16,7 +16,7 @@ int a, b, c, d = 0;
 		matr[1][1] = b;
 	}
 	
-	return matr[0][1]; // çäåñü ìîæíî áûëî è âûâåñòè matr[1][0];
+	return matr[0][1]; // here you could print matr [1][0];
 	
 }
 
