@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int f(int n) {
+	
+int matr[2][2];	
+matr[0][0] = 1; matr[0][1] = 1; // (1 1) <--- it is a matrix. If we raise it to the power n - the number of the Fibbonacci number,   (k+1 k) , where k is the Fibonnacci number determined by the number n.
+matr[1][0] = 1; matr[1][1] = 0; // (1 0)      we get a new matrix of the following form:      						                           (k k-1)
+		
+int a, b, c, d = 0;
+	
+	for (int i = 1; i < n; i++) {
+		a = matr[0][0]; b = matr[0][1]; c = matr[1][0]; d = matr[1][1];
+		matr[0][0] = a + c;
+		matr[0][1] = a;
+		matr[1][0] = b + d;
+		matr[1][1] = b;
+	}
+	
+	return matr[0][1]; // çäåñü ìîæíî áûëî è âûâåñòè matr[1][0];
+	
+}
+
+int main() {
+	
+	int n = 0, k = 0;
+	printf("Input number of: ");
+	scanf("%d", &n);
+	printf("The Fibbonacci number N is: %d", f(n));
+	
+}
